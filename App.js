@@ -12,7 +12,7 @@ export default function App() {
   }
   return (
     <View style={[styles.container, {backgroundColor: color}]}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text style={{color: 'blue'}}>Open up App.js to start working on your app!</Text>
       <Button text="Hello" textColor="black"
       onPress={() => setColor(randomRgb())
       }
