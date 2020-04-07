@@ -1,13 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Button from './Button'
 
 export default function App() {
+  const [color, setColor] = useState('red')
+  const randomRgb = () => {
+    const red = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+    const orange = Math.floor(Math.random() * 256);
+    return `rgb(${red}, ${blue}, ${orange})`
+  }
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: color}]}>
       <Text>Open up App.js to start working on your app!</Text>
       <Button text="Hello" textColor="black"
-      onPress={() => console.log('Pressed Button')
+      onPress={() => setColor(randomRgb())
       }
       />
     </View>
